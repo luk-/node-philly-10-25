@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>st_luke node philly</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+        
+        <section>
+          <h1>hello</h1>
+          <h2>hello</h2>
+          <h3>hello</h3>
+          <h4>hello</h4>
+        </section>
+        
+        <section>
+          <h1>Luke Arduini</h1>
+          <br />
+          <h2><a href="http://twitter.com/st_luke">@st_luke</a></h2>
+          <br />
+          <ul>
+            <li>Javascript Programmer</li>
+            <li>Curator of EmpireJS</li>
+            <li>Upstate NY Native</li>
+            <li>Nak Muay Farang</li>
+          </ul>
+        </section>
+        
+        <section>
+          <h1>Javascript</h1>
+          <h1>fuck</h1>
+          <h1>yeah</h1>
+        </section>
+        
+        <section>
+          <img width="400" src="img/ballmer_prance.gif" alt />
+          <img width="400" src="img/ballmer_clap.gif" alt />
+          <img width="400" src="img/ballmer_being_weird.gif" alt />
+          <img width="400" src="img/ballmer_in_disguise.gif" alt />
+          
+        </section>
+        
+        <section>
+          <h1>Javascript no longer sucks</h1>
+          browser vendors are deprecating old versions of their crappy software
+                      at a rate which doesn't force us to write client-side code in a metaphorical
+                      ghetto
+        </section>
+        
+        <section>
+          <h1>but more importantly</h1>
+          <h1>we've got node fucking js</h1>
+        </section>
+        
+        <section>
+          <h1>slow down, buddy</h1>
+          <h2>node.js isn't the first time javascript has been done on the server</h2>
+          <ul>
+            <li>netscape enterprise server</li>
+            <li>mozilla spidermonkey</li>
+          </ul>
+        </section>
+        
+        <section>
+          <h1>no shit,</h1>
+          <h2>but it's the first time it's been done right</h2>
+        </section>
+        
+        <section>
+          <ul>
+            <li>fun event driven programming paradigm</li>
+            <li>version of the common.js module specification</li>
+            <li>stable on multiple platforms</li>
+            <li>dependencies done right via npm</li>
+            <li>simple to install</li>
+            <li>did I mention NPM?</li>
+          </ul>
+        </section>
+        
+        <section>
+          <h1>not a web framework</h1>
+          <h3>but you can make web frameworks with it</h3>
+          <ul>
+            <li>express</li>
+            <li>flatiron</li>
+            <li>tower</li>
+            <li>geddy</li>
+          </ul>
+        </section>
+        
+        <section>
+          <h1>"node is a systems programming environment"</h1>
+          - isaac schlueter, July, nodeconf 2012
+        </section>
+        
+        <section>
+          <ul>
+            <li>Build network applications without connecting to a separate 
+          "adaptable interface" to facilitate network IO.</li>
+          <br />
+          <li>The application logic and configuration exist within your app itself.</li>
+          <br />
+          <li>Your app *is* its own web server and directly handles its own HTTP traffic.</li>
+          <br />
+          <li>That means less bullshit, no wonky adapter DSLs, no third party configuration hidden elsewhere on the system</li>
+        </ul>
+
+        </section>
+        
+        
+        <section>
+          <h2>Let's talk about streams</h2>
+        </section>
+        
+        <section>
+          <h2>In Unix and Linux, you can use a pipe <br /><br /> | <br /><br /> to redirect the stdout of one of your programs
+            to the stdin of another.</h2>
+        </section>
+        
+        <section>
+          <h2>This is incredibly important and useful, because it allows us to essentially connect
+            multiple programs together without the programs needing to know about the internals of each other.</h2>
+        </section>
+        
+        <section>
+          <h2>streams are essentially a special type of node eventemitter</h2>
+          <h3>if you can handle using an eventemitter, you can handle using a stream</h3>
+        </section>
+        
+        <section>
+          <h2>"absurdly tiny modules are easy to discover, easy to test, easy to verify, and easy to use"</h2>
+          <h2>-@substack</h2>
+        </section>
+        
+        <section>
+          <h1>streaming modules</h1>
+        </section>
+        
+        <section>
+
+          <h2>filed</h2>
+          <pre><code contenteditable>
+            http.createServer(function (req, resp) {
+              filed('./data.json').pipe(resp)
+            })
+        </code></pre>
+        
+        <a href="https://github.com/mikeal/filed">https://github.com/mikeal/filed</a>
+        </section>
+        
+        <section>
+          <h2>request</h2>
+          <pre><code contenteditable>
+    request('http://luke.xxx', function (err, res, body) {
+      if (!error) {
+        console.log(body)
+      }
+    })
+          </code></pre>
+          <a href="https://github.com/mikeal/request">github.com/mikeal/request</a>
+          <br /><br />
+          <h3>typical usage</h3>
+          
+        </section>
+          
+          <section>
+            <pre><code contenteditable>
+      request('http://luke.xxx/avatar.png')
+        .pipe(fs.createWriteStream('file.png'))
+              </code></pre>
+              <br><br>
+              <h3>Redirect contents of file retrieved over http to local system</h3>
+            </section>
+            
+            <section>
+              <h2>JSONStream</h2>
+            <pre><code contenteditable>
+        var stream = JSONStream.parse(['rows', true, 'doc'])
+
+        stream.on('data', function(data) {
+          console.log('received:', data)
+        })
+            </code></pre>
+            
+            <a href="https://github.com/dominictarr/JSONStream">github.com/dominictarr/JSONStream</a>
+          </section>
+          
+          <section>
+            
+            <h2>procstream</h2>
+            <pre><code contenteditable>
+          var $p = require('procstreams');
+
+          $p('cat tests/fixtures/10lines.txt')
+            .pipe('grep even')
+            .pipe('wc -l')
+            .pipe(process.stdout)
+          </code></pre>
+          
+          <a href="https://github.com/polotek/procstreams">github.com/polotek/procstreams</a>
+
+          </section>
+          
+          <section>
+            <center><img src="img/substack.jpeg" alt /></center><br><br>
+            <a href="http://github.com/substack/stream-handbook">github.com/substack/stream-handbook</a>
+            <h3>Use it, live it, love it</h3>
+            <h4>he fucking knows what he's talking about</h4>
+            <br>
+          </section>
+          
+          <section>
+            <h1>thanks!</h1>
+          </section>
+            
+          
+          
+          
+        
+        
+        
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/highlight.js', async: true, callback: function() { window.hljs.initHighlightingOnLoad(); } },
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'lib/js/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'lib/js/data-markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+		</script>
+
+	</body>
+</html>
